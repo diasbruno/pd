@@ -1,0 +1,14 @@
+#!/bin/bash
+
+_pd() {
+	local LEVELS=
+	for X in $(seq 1 1 $1); do
+		LEVELS="$LEVELS../"
+	done
+	cd $LEVELS
+}
+
+pd() {
+	local _COUNT=$1
+	_pd ${_COUNT:-1}
+}
